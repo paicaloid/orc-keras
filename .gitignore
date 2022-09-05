@@ -111,5 +111,7 @@ experiments/
 
 #datasets
 datasets/
+data/
 
 .idea/
+
