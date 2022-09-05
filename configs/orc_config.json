@@ -1,0 +1,39 @@
+{
+  "exp": {
+    "name": "orc_exp_gen_captcha"
+  },
+  "model":{
+    "name": "orc_model",
+    "learning_rate": 0.001,
+    "optimizer": "adam"
+  },
+  "trainer":{
+    "img_width": 150,
+    "img_height": 50,
+    "max_length": 6,
+    "downsample_factor": 4,
+    "num_epochs": 100,
+    "batch_size": 16,
+    "validation_split":0.25,
+    "verbose_training": true
+  },
+  "callbacks":{
+    "early_stopping_patience": 10,
+    "restore_best_weights": true,
+    "checkpoint_monitor": "val_loss",
+    "checkpoint_mode": "min",
+    "checkpoint_save_best_only": true,
+    "checkpoint_save_weights_only": true,
+    "checkpoint_verbose": true,
+    "tensorboard_write_graph": true
+  },
+  "dataset":{
+    "train_path": "./data/gen_captcha/train",
+    "test_path": "./data/gen_captcha/test",
+    "train_size": 0.9,
+    "shuffle": true
+  },
+  "evaluate":{
+    "weights_path": "./experiments/2022-09-05/orc_exp_gen_captcha/checkpoints/orc_exp_gen_captcha-39-18.82.hdf5"
+  }
+}
